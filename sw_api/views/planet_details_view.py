@@ -19,7 +19,7 @@ class PlanetDetailsView(APIView):
         PlanetsController().delete_planet_by_id(planet_id)
         return Response('ok')
 
-    def put(self, request, *args, **kwargs):
+    def patch(self, request, *args, **kwargs):
         planet_id = kwargs.get('planet_id')
         planet_data = request.data
         planet = PlanetsController().update_planet(planet_id, planet_data)
